@@ -328,6 +328,8 @@ section + .impact,.impact + section{border-top:0}
 .studio-logo{display:block;width:300px;max-width:100%;height:auto}
 .studio-item-wide{grid-column:1 / -1;background:var(--teal-wash)}
 .studio-item-wide .tl-link{align-self:flex-start;margin-top:0}
+.studio-item-span{grid-column:1 / -1}
+.dt-img{border-radius:50%}
 .studio-item a:not(.tl-link){color:var(--teal-dark)}
 
 /* ---------- toolbox ---------- */
