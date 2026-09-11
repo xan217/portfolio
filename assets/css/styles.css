@@ -324,7 +324,7 @@ section + .impact,.impact + section{border-top:0}
 .studio-cta p{margin:0;max-width:62ch;font-size:.9375rem}
 
 .studio-head{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
-.studio-head .journey-link{margin-top:4px}
+.studio-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin:4px 0 0}
 .studio-logo{display:block;width:300px;max-width:100%;height:auto}
 .studio-item-wide{grid-column:1 / -1;background:var(--teal-wash)}
 .studio-item-wide .tl-link{align-self:flex-start;margin-top:0}
