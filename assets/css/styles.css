@@ -9,6 +9,7 @@
   --teal-dark:#0a554c;
   --teal-wash:#e6f0ee;
   --panel:#0e1e26;
+  --amber:#b4620f;
   --font-display:"Archivo",Georgia,sans-serif;
   --font-script:"Allura","Segoe Script","Brush Script MT",cursive;
   --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -194,7 +195,12 @@ p{margin:0 0 18px}
 .tl-when{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-soft);margin:0;padding-top:3px}
 .tl-body h3{margin-bottom:8px}
 .tl-body p{font-size:.9375rem;color:var(--ink-soft);margin-bottom:10px;max-width:64ch}
-.tl-stack{font-family:var(--font-mono);font-size:.75rem;color:var(--teal-dark);margin-bottom:0}
+.tl-body p.tl-stack{font-family:var(--font-mono);font-size:.75rem;color:var(--teal-dark);margin-bottom:0}
+.tl-body p.tl-result{color:var(--amber);font-weight:600;padding-left:12px;border-left:2px solid var(--amber)}
+.tl-projects{list-style:none;margin:0 0 12px;padding:0;max-width:64ch}
+.tl-projects li{position:relative;padding-left:17px;margin-bottom:8px;font-size:.9375rem;color:var(--ink-soft);line-height:1.6}
+.tl-projects li::before{content:"";position:absolute;left:0;top:.72em;width:7px;height:1.5px;background:var(--teal)}
+.tl-proj{font-weight:600;color:var(--ink)}
 .tl-extra{display:none}
 .timeline.is-expanded .tl-extra{display:grid}
 
@@ -229,7 +235,7 @@ p{margin:0 0 18px}
 .t-since{font-size:.75rem;color:var(--ink-soft);margin-top:2px}
 .t-track{position:relative;height:8px;background:#e2e8e6;border-radius:4px}
 .t-fill{position:absolute;top:0;bottom:0;width:0;background:var(--teal);border-radius:4px;transition:width 1.1s cubic-bezier(.2,.7,.3,1)}
-.t-gap{position:absolute;top:0;bottom:0;background-image:repeating-linear-gradient(90deg,#b9c7c3 0 4px,transparent 4px 8px);border-radius:4px}
+.t-gap{position:absolute;top:3px;height:2px;background-image:repeating-linear-gradient(90deg,var(--teal) 0 4px,transparent 4px 9px);opacity:.55}
 .t-dot{position:absolute;top:50%;width:9px;height:9px;border-radius:50%;background:var(--teal-dark);transform:translate(-50%,-50%);border:2px solid var(--paper)}
 .t-yrs{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-soft);text-align:right}
 .t-row.t-extra,.skills-earlier-extra{display:none}
@@ -317,7 +323,51 @@ section + .impact,.impact + section{border-top:0}
 }
 .studio-cta p{margin:0;max-width:62ch;font-size:.9375rem}
 
+.studio-head{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.studio-head .journey-link{margin-top:4px}
+.studio-logo{display:block;width:300px;max-width:100%;height:auto}
+.studio-item-wide{grid-column:1 / -1;background:var(--teal-wash)}
+.studio-item-wide .tl-link{align-self:flex-start;margin-top:0}
+.studio-item a:not(.tl-link){color:var(--teal-dark)}
+
+/* ---------- toolbox ---------- */
+.toolbox{margin-top:56px;padding-top:30px;border-top:1px solid var(--line)}
+.toolbox-title{font-size:1.25rem;margin-bottom:22px}
+.toolbox-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 28px;margin:0}
+.toolbox-grid dt{font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+.toolbox-grid dd{margin:0}
+.toolbox-grid .card-tags{margin:0;padding:0}
+
+/* ---------- recommendations ---------- */
+.quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:44px 0 28px}
+.quote{
+  position:relative;margin:0;background:var(--card-wash);border:1px solid var(--line);border-radius:20px;
+  padding:34px 30px 26px;display:flex;flex-direction:column;justify-content:space-between;
+}
+.quote::before{
+  content:"\201C";position:absolute;top:-6px;left:22px;font-family:Georgia,serif;font-size:4.5rem;line-height:1;color:var(--teal);opacity:.35;
+}
+.quote blockquote{margin:0 0 22px}
+.quote blockquote p{font-size:.9375rem;color:var(--ink);line-height:1.75;margin:0 0 12px}
+.quote figcaption{display:flex;flex-direction:column;padding-top:16px;border-top:1px solid var(--line)}
+.q-name{font-family:var(--font-display);font-weight:600}
+.q-role{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-soft)}
+
 /* ---------- creative ---------- */
+.creative-card-wide{grid-column:1 / -1}
+.creative-logo{position:absolute;left:28px;top:28px;width:96px;height:96px;border-radius:50%;box-shadow:0 12px 24px -14px rgba(18,34,43,.7)}
+.creative-card:has(.creative-logo){padding-left:152px}
+.c-stats{list-style:none;display:flex;flex-wrap:wrap;gap:10px 28px;margin:18px 0 0;padding:14px 0 0;border-top:1px solid var(--line)}
+.c-stats li{display:flex;flex-direction:column}
+.c-n{font-family:var(--font-display);font-size:1.375rem;line-height:1.1;color:var(--teal-dark)}
+.c-k{font-size:.75rem;color:var(--ink-soft)}
+.c-links{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+.creative-card p.c-links{text-align:left}
+.c-links a{
+  font-family:var(--font-mono);font-size:.75rem;color:var(--teal-dark);text-decoration:none;
+  border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;transition:border-color .2s,background .2s;
+}
+.c-links a:hover{border-color:var(--teal);background:var(--teal-wash)}
 .creative-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
 .creative-card{
   position:relative;background:var(--card-wash);border:1px solid var(--line);border-radius:20px;padding:26px 28px 28px 92px;
@@ -393,6 +443,10 @@ section + .impact,.impact + section{border-top:0}
   .impact-grid{grid-template-columns:repeat(2,1fr);gap:32px}
   .principles{grid-template-columns:1fr}
   .studio-grid{grid-template-columns:1fr;gap:28px}
+  .studio-head{grid-template-columns:1fr;gap:24px}
+  .studio-logo{width:240px}
+  .toolbox-grid{grid-template-columns:repeat(2,1fr)}
+  .quote-grid{grid-template-columns:1fr}
   .studio-facts{position:static}
   .creative-grid{grid-template-columns:1fr}
   .nav{gap:20px}
@@ -418,6 +472,10 @@ section + .impact,.impact + section{border-top:0}
   .cards,.impact-grid,.studio-list{grid-template-columns:1fr}
   .creative-card{padding:84px 22px 24px}
   .creative-icon{left:22px;top:24px}
+  .creative-logo{left:22px;top:20px;width:56px;height:56px}
+  .creative-card:has(.creative-logo){padding-left:22px;padding-top:92px}
+  .toolbox-grid{grid-template-columns:1fr}
+  .quote{padding:30px 22px 22px}
   .studio-cta{padding:20px}
   .btn{width:100%}
   .monogram em{display:none}

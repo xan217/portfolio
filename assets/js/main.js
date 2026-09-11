@@ -132,12 +132,10 @@
         fill.style.left = left + "%";
         fill.setAttribute("data-width", (right - left).toFixed(2));
         track.appendChild(fill);
-        if(i === 0){
-          var dot = document.createElement("span");
-          dot.className = "t-dot";
-          dot.style.left = left + "%";
-          track.appendChild(dot);
-        }
+        var dot = document.createElement("span");
+        dot.className = "t-dot";
+        dot.style.left = left + "%";
+        track.appendChild(dot);
         prevEnd = right;
       });
       row.querySelector(".t-yrs").textContent = "~" + Math.max(1, Math.floor(total / 12)) + "y";
