@@ -15,7 +15,7 @@
   /* header background + floating "Get in touch" button */
   var cta = document.getElementById("stickyCta");
   var ctaStart = document.getElementById("about");
-  var ctaStop = document.getElementById("projects");
+  var ctaStop = document.getElementById("contact");
   function onScroll(){
     var y = window.pageYOffset || document.documentElement.scrollTop;
     header.classList.toggle("is-stuck", y > 24);
@@ -107,6 +107,40 @@
     grid.querySelectorAll(".t-axis span[data-year]").forEach(function(label){
       var y = label.getAttribute("data-year");
       label.style.left = (y === "now" ? 100 : pct(new Date(parseInt(y, 10), 0, 1))) + "%";
+    });
+
+    /* rows with several periods ("2014-06:2016-01,2021-06:now") get one bar per
+       period and a dashed gap between them; the year count adds the periods up */
+    grid.querySelectorAll(".t-row[data-periods]").forEach(function(row){
+      var track = row.querySelector(".t-track");
+      var total = 0, prevEnd = null;
+      row.getAttribute("data-periods").split(",").forEach(function(period, i){
+        var ends = period.split(":");
+        var from = parse(ends[0]);
+        var to = ends[1] === "now" ? now : parse(ends[1]);
+        var left = pct(from), right = pct(to);
+        total += monthsBetween(from, to);
+        if(prevEnd !== null){
+          var gap = document.createElement("span");
+          gap.className = "t-gap";
+          gap.style.left = prevEnd + "%";
+          gap.style.width = (left - prevEnd) + "%";
+          track.appendChild(gap);
+        }
+        var fill = document.createElement("span");
+        fill.className = "t-fill";
+        fill.style.left = left + "%";
+        fill.setAttribute("data-width", (right - left).toFixed(2));
+        track.appendChild(fill);
+        if(i === 0){
+          var dot = document.createElement("span");
+          dot.className = "t-dot";
+          dot.style.left = left + "%";
+          track.appendChild(dot);
+        }
+        prevEnd = right;
+      });
+      row.querySelector(".t-yrs").textContent = "~" + Math.max(1, Math.floor(total / 12)) + "y";
     });
 
     grid.querySelectorAll(".t-row[data-since]").forEach(function(row){
