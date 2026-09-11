@@ -271,6 +271,11 @@ section + .impact,.impact + section{border-top:0}
 .project-card.featured{grid-column:1 / -1}
 .featured .card-body{display:grid;grid-template-columns:1.7fr 1fr;gap:40px;padding:28px 32px 32px}
 .feature-main{display:flex;flex-direction:column}
+/* the screenshot sits in a plain browser frame, cropped to the top of the app */
+.feature-shot{margin:28px 32px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 24px 40px -32px rgba(18,34,43,.6)}
+.shot-bar{display:flex;gap:6px;padding:10px 14px;background:#eef2f1;border-bottom:1px solid var(--line)}
+.shot-bar span{width:9px;height:9px;border-radius:50%;background:#cfd9d6}
+.feature-shot img{display:block;width:100%;height:auto;max-height:440px;object-fit:cover;object-position:top left}
 .featured h3{font-size:1.5rem}
 .feature-stats{list-style:none;margin:0;padding:0 0 0 32px;border-left:1px solid var(--line);align-self:start}
 .feature-stats li{padding:14px 0;border-bottom:1px solid var(--line)}
@@ -280,6 +285,7 @@ section + .impact,.impact + section{border-top:0}
 .feature-stats .k{display:block;font-size:.875rem;color:var(--ink-soft);margin-top:2px}
 @media (max-width:860px){
   .featured .card-body{grid-template-columns:1fr;gap:28px;padding:24px 24px 26px}
+  .feature-shot{margin:20px 20px 0}
   .feature-stats{padding:24px 0 0;border-left:0;border-top:1px solid var(--line)}
 }
 
