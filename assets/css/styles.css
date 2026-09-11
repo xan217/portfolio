@@ -263,8 +263,25 @@ section + .impact,.impact + section{border-top:0}
   font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.04em;color:var(--ink-soft);
   background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px;
 }
-.card-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.card-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:22px}
 .card-actions .btn{padding:11px 19px;font-size:.875rem}
+.card-note{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:.75rem;color:var(--ink-soft)}
+
+/* the flagship project spans the grid, with its numbers in a side column */
+.project-card.featured{grid-column:1 / -1}
+.featured .card-body{display:grid;grid-template-columns:1.7fr 1fr;gap:40px;padding:28px 32px 32px}
+.feature-main{display:flex;flex-direction:column}
+.featured h3{font-size:1.5rem}
+.feature-stats{list-style:none;margin:0;padding:0 0 0 32px;border-left:1px solid var(--line);align-self:start}
+.feature-stats li{padding:14px 0;border-bottom:1px solid var(--line)}
+.feature-stats li:first-child{padding-top:4px}
+.feature-stats li:last-child{border-bottom:0}
+.feature-stats .n{display:block;font-family:var(--font-display);font-size:1.75rem;line-height:1.1;color:var(--teal-dark)}
+.feature-stats .k{display:block;font-size:.875rem;color:var(--ink-soft);margin-top:2px}
+@media (max-width:860px){
+  .featured .card-body{grid-template-columns:1fr;gap:28px;padding:24px 24px 26px}
+  .feature-stats{padding:24px 0 0;border-left:0;border-top:1px solid var(--line)}
+}
 
 /* ---------- contact ---------- */
 #contact{padding-bottom:72px}
