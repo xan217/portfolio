@@ -71,6 +71,9 @@ p{margin:0 0 18px}
 .monogram em{font-style:normal}
 .monogram .mark{width:30px;height:30px;flex:none;display:block;color:var(--green);filter:drop-shadow(0 0 6px var(--green-glow));transition:color .2s ease}
 .monogram:hover .mark{color:var(--green-hi)}
+/* the number patch is knocked out of the ball, so it takes the ground colour */
+.mark-patch{fill:var(--bg)}
+.site-footer .mark-patch{fill:#0f1112}
 .nav{display:flex;gap:28px;align-items:center}
 .nav a{font-size:.9375rem;color:var(--text-soft);text-decoration:none;padding:4px 0;transition:color .2s ease}
 .nav a:not(.nav-page){position:relative}
