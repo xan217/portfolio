@@ -87,6 +87,15 @@ p{margin:0 0 18px}
 .mark-tag{display:inline-flex;flex:none;filter:drop-shadow(0 0 7px var(--green-glow))}
 .monogram .brand-mark{color:var(--green);transition:color .2s ease}
 .monogram:hover .brand-mark{color:var(--green-hi)}
+/* the menu button exists only where the bar can no longer hold the sections */
+.menu-btn{display:none}
+.menu-bars{position:relative;display:block;width:20px;height:2px;background:currentColor;border-radius:2px}
+.menu-bars::before,.menu-bars::after{
+  content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor;border-radius:2px;
+  transition:transform .22s ease-out;
+}
+.menu-bars::before{top:-6px}
+.menu-bars::after{top:6px}
 .nav{display:flex;gap:28px;align-items:center}
 .nav a{font-size:.9375rem;color:var(--text-soft);text-decoration:none;padding:4px 0;transition:color .2s ease}
 .nav a:not(.nav-page){position:relative}
@@ -529,10 +538,42 @@ section + .impact,.impact + section{border-top:0}
   @supports not ((mask-image:url("")) or (-webkit-mask-image:url(""))){
     .monogram .brand-mark{background-image:url("../img/xan217-mark-plain.png")}
   }
-  .nav{gap:16px;overflow-x:auto;scrollbar-width:none;max-width:calc(100% - 46px)}
-  .nav::-webkit-scrollbar{display:none}
-  .nav a{font-size:.8125rem;white-space:nowrap}
+  .menu-btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;margin-right:-10px;padding:0;
+    border:0;background:transparent;color:var(--text);cursor:pointer;
+  }
+  /* the sections move into a panel hanging from the header: absolute, because
+     once the header is stuck it carries a backdrop filter and would become the
+     frame for anything fixed inside it */
+  .nav{
+    position:absolute;top:100%;left:0;right:0;z-index:59;
+    height:calc(100vh - var(--header-h));
+    height:calc(100dvh - var(--header-h));
+    flex-direction:column;align-items:stretch;gap:0;
+    padding:8px 20px 40px;background:var(--bg);
+    overflow-y:auto;overscroll-behavior:contain;
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .22s ease-out,transform .22s ease-out,visibility .22s;
+  }
+  .nav a{font-size:1.1875rem;color:var(--text);padding:17px 2px;border-bottom:1px solid var(--line)}
+  .nav a.is-active{color:var(--green)}
+  /* the sprayed underline belongs to the bar, not to a list */
+  .nav a:not(.nav-page)::after{display:none}
+  .nav .nav-page{
+    justify-content:center;margin:26px 0 0;padding:15px 18px;font-size:1rem;
+    border-bottom-color:var(--green);
+  }
+  .is-menu .nav{opacity:1;visibility:visible;transform:none}
+  /* the page behind stays put while the panel is open */
+  html.is-menu{overflow:hidden}
+  /* the bars cross when the panel is open */
+  .is-menu .menu-bars{background:transparent}
+  .is-menu .menu-bars::before{transform:translateY(6px) rotate(45deg)}
+  .is-menu .menu-bars::after{transform:translateY(-6px) rotate(-45deg)}
   .sticky-cta{right:16px;bottom:16px;padding:11px 16px}
+  /* the floating button would sit on top of the open panel */
+  .is-menu .sticky-cta{opacity:0;pointer-events:none}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}

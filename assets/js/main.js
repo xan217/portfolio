@@ -28,6 +28,48 @@
   window.addEventListener("scroll", onScroll, { passive:true });
   onScroll();
 
+  /* ---------- the menu, where the bar can no longer hold the sections ---------- */
+  var root = document.documentElement;
+  var menuBtn = document.getElementById("menuBtn");
+  var siteNav = document.getElementById("siteNav");
+  var behind = [].slice.call(document.querySelectorAll("main, .site-footer, .sticky-cta"));
+
+  function setMenu(open){
+    root.classList.toggle("is-menu", open);
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    menuBtn.setAttribute("aria-label", open ? "Close the menu" : "Open the menu");
+    /* the rest of the page steps out of reach while the panel is up */
+    behind.forEach(function(el){ el.inert = open; });
+    if(open){
+      /* the panel is still hidden this tick, and a hidden element cannot
+         take focus, so the first link waits for the next frame */
+      requestAnimationFrame(function(){
+        var first = siteNav.querySelector("a");
+        if(first){ first.focus(); }
+      });
+    }
+  }
+
+  if(menuBtn && siteNav){
+    menuBtn.addEventListener("click", function(){
+      setMenu(!root.classList.contains("is-menu"));
+    });
+    siteNav.addEventListener("click", function(e){
+      if(e.target.closest("a")){ setMenu(false); }
+    });
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape" && root.classList.contains("is-menu")){
+        setMenu(false);
+        menuBtn.focus();
+      }
+    });
+    /* turning the phone sideways can bring the full bar back */
+    window.addEventListener("resize", function(){
+      if(window.innerWidth > 640 && root.classList.contains("is-menu")){ setMenu(false); }
+    });
+  }
+
+
   /* smooth scroll that accounts for the fixed header */
   document.querySelectorAll('a[href^="#"]').forEach(function(link){
     link.addEventListener("click", function(e){
