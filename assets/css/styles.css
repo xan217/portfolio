@@ -69,11 +69,24 @@ p{margin:0 0 18px}
   text-decoration:none;display:inline-flex;align-items:center;gap:10px;
 }
 .monogram em{font-style:normal}
-.monogram .mark{width:30px;height:30px;flex:none;display:block;color:var(--green);filter:drop-shadow(0 0 6px var(--green-glow));transition:color .2s ease}
-.monogram:hover .mark{color:var(--green-hi)}
-/* the number patch is knocked out of the ball, so it takes the ground colour */
-.mark-patch{fill:var(--bg)}
-.site-footer .mark-patch{fill:#0f1112}
+/* the xan217 tag, my own mark: a single image tinted through a mask, so it
+   takes the neon green here and the ground colour anywhere else */
+.brand-mark{
+  display:block;flex:none;width:52px;height:33px;
+  background:url("../img/xan217-mark.png") center/contain no-repeat;
+}
+@supports ((mask-image:url("")) or (-webkit-mask-image:url(""))){
+  .brand-mark{
+    background:currentColor;
+    -webkit-mask:url("../img/xan217-mark.png") center/contain no-repeat;
+    mask:url("../img/xan217-mark.png") center/contain no-repeat;
+  }
+}
+.brand-mark-lg{width:60px;height:38px}
+/* the glow lives on the wrapper: a filter on the mark itself would be masked away */
+.mark-tag{display:inline-flex;flex:none;filter:drop-shadow(0 0 7px var(--green-glow))}
+.monogram .brand-mark{color:var(--green);transition:color .2s ease}
+.monogram:hover .brand-mark{color:var(--green-hi)}
 .nav{display:flex;gap:28px;align-items:center}
 .nav a{font-size:.9375rem;color:var(--text-soft);text-decoration:none;padding:4px 0;transition:color .2s ease}
 .nav a:not(.nav-page){position:relative}
@@ -111,8 +124,19 @@ p{margin:0 0 18px}
 .btn-ghost:hover{background:var(--green-dim);transform:translateY(-1px)}
 
 /* ---------- hero ---------- */
-.hero{padding:calc(var(--header-h) + 88px) 0 96px;background:radial-gradient(ellipse 60% 70% at 85% 20%,rgba(61,240,61,.07),transparent 70%)}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:start}
+.hero{
+  position:relative;overflow:hidden;padding:calc(var(--header-h) + 88px) 0 96px;
+  background:radial-gradient(ellipse 60% 70% at 85% 20%,rgba(61,240,61,.07),transparent 70%);
+}
+/* the tag sprayed on the wall behind everything, barely there */
+.hero::after{
+  content:"";position:absolute;right:-2%;bottom:-5%;z-index:0;pointer-events:none;
+  width:min(560px,46vw);height:calc(min(560px,46vw) / 1.581);
+  background:var(--green);opacity:.05;
+  -webkit-mask:url("../img/xan217-mark.png") center/contain no-repeat;
+  mask:url("../img/xan217-mark.png") center/contain no-repeat;
+}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:start}
 /* the name is a tag: a street-graffiti hand, sprayed in neon */
 .hero h1{
   font-family:var(--font-name);font-weight:400;font-size:clamp(3.2rem,7.6vw,5.4rem);
@@ -417,7 +441,7 @@ section + .impact,.impact + section{border-top:0}
 .site-footer{background:#0f1112;color:var(--text-soft);padding:36px 0;font-size:.875rem;border-top:1px solid var(--line)}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .footer-mid{display:inline-flex;align-items:center;gap:9px}
-.footer-mark{flex:none;color:var(--green)}
+.site-footer .brand-mark{color:var(--green)}
 .footer-links{display:flex;gap:12px;flex-wrap:wrap}
 .footer-links .social{
   display:inline-flex;align-items:center;justify-content:center;padding:6px;border-radius:999px;
