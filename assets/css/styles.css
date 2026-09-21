@@ -520,6 +520,15 @@ section + .impact,.impact + section{border-top:0}
   .studio-cta{padding:20px}
   .btn{width:100%}
   .monogram em{display:none}
+  /* the word is gone and the mark carries the brand alone, so it drops the
+     217, which turns to mush at this size */
+  .monogram .brand-mark{
+    -webkit-mask-image:url("../img/xan217-mark-plain.png");
+    mask-image:url("../img/xan217-mark-plain.png");
+  }
+  @supports not ((mask-image:url("")) or (-webkit-mask-image:url(""))){
+    .monogram .brand-mark{background-image:url("../img/xan217-mark-plain.png")}
+  }
   .nav{gap:16px;overflow-x:auto;scrollbar-width:none;max-width:calc(100% - 46px)}
   .nav::-webkit-scrollbar{display:none}
   .nav a{font-size:.8125rem;white-space:nowrap}
