@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Renne Castellanos — CV</title>
+<!-- Source of Renne-Castellanos-CV.pdf. Rendered with:
+     msedge --headless=new --no-pdf-header-footer --print-to-pdf=Renne-Castellanos-CV.pdf cv.html -->
+<style>
+@page{ size:A4; margin:10mm 12mm; }
+
+:root{
+  --ink:#16181a;
+  --soft:#4d5256;
+  --faint:#797f84;
+  --line:#d7dbdd;
+  --accent:#0f7a24;
+  --wash:#f2f6f2;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font:9.3pt/1.37 "Segoe UI",Calibri,Arial,sans-serif;
+  color:var(--ink);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+}
+p{margin:0 0 1.6mm}
+ul{margin:.8mm 0 0;padding-left:4.2mm}
+li{margin:0 0 .9mm}
+b,strong{font-weight:600}
+a{color:inherit;text-decoration:none}
+
+/* ---------- masthead ---------- */
+.top{display:grid;grid-template-columns:1fr 26mm;align-items:start;gap:6mm;
+     border-bottom:1.6pt solid var(--accent);padding-bottom:3mm}
+h1{font:600 21pt/1 "Trebuchet MS",sans-serif;letter-spacing:-.01em;margin:0 0 1.4mm}
+.role{font:600 10.2pt/1.25 "Trebuchet MS",sans-serif;color:var(--accent);margin:0 0 2.2mm}
+.contact{font-size:8.7pt;color:var(--soft);margin:0}
+.contact span{white-space:nowrap}
+.contact i{font-style:normal;color:var(--line);padding:0 1.4mm}
+.mark{width:26mm;height:auto;display:block;margin-top:1mm}
+
+/* ---------- sections ---------- */
+h2{
+  font:600 8.4pt/1 "Trebuchet MS",sans-serif;text-transform:uppercase;letter-spacing:.15em;
+  color:var(--accent);margin:4.2mm 0 2.4mm;padding-bottom:1.2mm;border-bottom:.7pt solid var(--line);
+}
+.lead{font-size:9.5pt;margin-top:2.6mm}
+
+/* ---------- the strengths block ---------- */
+.kit{display:grid;grid-template-columns:1fr 1fr;gap:.6mm 7mm}
+.kit p{margin:0;font-size:8.9pt;line-height:1.34;display:grid;grid-template-columns:23mm 1fr;gap:2mm;align-items:baseline}
+.kit b{color:var(--ink)}
+.kit span{color:var(--soft)}
+
+/* ---------- experience ---------- */
+.entry{display:grid;grid-template-columns:25mm 1fr;gap:4.5mm;margin-bottom:2.8mm;break-inside:avoid}
+.when{font-size:8.2pt;color:var(--soft);padding-top:.6mm;line-height:1.32;white-space:nowrap}
+.when em{display:block;font-style:normal;color:var(--faint);font-size:7.8pt;margin-top:.5mm;white-space:normal}
+h3{font:600 10pt/1.25 "Trebuchet MS",sans-serif;margin:0 0 1.2mm}
+h3 .org{color:var(--accent)}
+.what p{font-size:9pt}
+.what li{font-size:8.9pt}
+.stack{font-size:8.4pt;color:var(--faint);margin:1.2mm 0 0}
+.metric{background:var(--wash);border-left:1.6pt solid var(--accent);
+        padding:1mm 2.4mm;font-size:8.9pt;margin:1.4mm 0 0}
+
+/* ---------- projects ---------- */
+.proj{display:grid;grid-template-columns:25mm 1fr;gap:4.5mm;margin-bottom:1.9mm;break-inside:avoid}
+.proj p{font-size:8.9pt;margin:0}
+.proj .name{font-weight:600}
+
+/* ---------- closing columns ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:6mm;break-inside:avoid}
+.cols h4{font:600 9pt/1.2 "Trebuchet MS",sans-serif;margin:0 0 1.4mm}
+.cols p,.cols li{font-size:8.8pt}
+.cols ul{padding-left:4mm}
+.cols h2{margin-top:3.6mm}
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div>
+    <h1>Renne Castellanos</h1>
+    <p class="role">Senior QA Automation Engineer &middot; Full-Stack Developer</p>
+    <p class="contact">
+      <span>Medell&iacute;n, Colombia (UTC&minus;5), remote</span><i>|</i><span>+57 310 494 9979</span><i>|</i><span>xan217@gmail.com</span><br>
+      <span>linkedin.com/in/xan217</span><i>|</i><span>github.com/xan217</span><i>|</i><span>xan217.github.io/portfolio</span><i>|</i><span>English C2, Spanish native</span>
+    </p>
+  </div>
+  <img class="mark" src="mark-print.png" alt="xan217">
+</header>
+
+<p class="lead">Fourteen years building software and twelve testing it. I started as a web developer in Caracas in 2012 and worked through every layer of a product: databases, backends in C#, PHP and Node, frontends in Angular, React and Vue. In 2014 I automated my first suite in Selenium and led a QA team, and I never stopped looking at software from the tester's side. Today I design QA processes and automation suites in TypeScript, Playwright and Cypress, bring in AI agents where they take real work off the team, and read the code when a test fails, because a developer's eye finds the defect where it actually lives.</p>
+
+<h2>Skills and tools</h2>
+<div class="kit">
+  <p><b>Testing and QA</b><span>Playwright, Cypress, Selenium, Puppeteer, Testmo</span></p>
+  <p><b>QA practice</b><span>Test strategy, process design, data-driven testing</span></p>
+  <p><b>Languages</b><span>TypeScript, JavaScript, Python, PHP, C#, SQL, C++, Java</span></p>
+  <p><b>Frontend</b><span>Angular, React, Vue.js, Ionic, Tailwind, SASS, jQuery</span></p>
+  <p><b>Backend</b><span>Node.js/Express, Django, .NET/VB, Laravel, Yii</span></p>
+  <p><b>Data</b><span>PostgreSQL, MySQL, SQL Server, migrations, modelling</span></p>
+  <p><b>AI</b><span>Claude and Claude Code agents, prompt engineering</span></p>
+  <p><b>Tooling</b><span>Git, Docker, Azure, Jira, Confluence, Scrum</span></p>
+  <p><b>Leadership</b><span>Team lead, mentoring, requirement planning</span></p>
+  <p><b>Design</b><span>Brand identity, UI design, CorelDRAW, DaVinci Resolve</span></p>
+</div>
+
+<h2>Experience</h2>
+
+<section class="entry">
+  <div class="when">08/2026 &ndash; 09/2026<em>Remote</em></div>
+  <div class="what">
+    <h3>Senior QA Automation Engineer, <span class="org">Tenant Evaluation LLC</span></h3>
+    <p>Built and matured the QA function of a property-management platform, combining manual testing, process design and automation.</p>
+    <ul>
+      <li>Mapped every process of the system under test as diagrams, then defined and standardized how testing is identified, planned and tracked.</li>
+      <li>Validated new features, enhancements and fixes, and documented defects against QA best practice.</li>
+      <li>Developed the Playwright automation prototypes behind the team's automation strategy, using Claude for test generation.</li>
+      <li>Contributed the QA standards and guidelines adopted across the engineering team.</li>
+    </ul>
+    <p class="metric"><b>130+ test cases written in the first week</b>, with every process of the system mapped in diagrams.</p>
+    <p class="stack">Playwright &middot; Testmo &middot; Claude &middot; Jira and Confluence</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">04/2025 &ndash; 08/2026<em>Medell&iacute;n, remote</em></div>
+  <div class="what">
+    <h3>Senior QA Automation Engineer, <span class="org">zinc.tech</span></h3>
+    <p>Took ownership of an existing automation project, assessed whether it could be extended at all, and architected a complete automation ecosystem from the ground up.</p>
+    <ul>
+      <li>Delivered the viability and extensibility assessment and the technical roadmap for a suite that could scale, then built everything that followed against it.</li>
+      <li>Split the suite into two tracks: a data-driven one fed by existing datasets, and a general track for end-to-end functional validation.</li>
+      <li>Built an automation control dashboard for on-demand runs of the full suite, live monitoring and system health reports.</li>
+      <li>Designed a dynamic data generation engine that produces large datasets and bulk-loads them into the platform, so tests run against realistic volume.</li>
+      <li>Configured AI agents with tailored documentation and guidelines to take on specific testing and development tasks.</li>
+      <li>Analysed the internal system to trace defects across processes and data layers, and delivered the fixes that kept automated runs reliable.</li>
+    </ul>
+    <p class="metric"><b>700+ automated test cases</b> covering business workflows, functional checks, APIs and third-party integration responses.</p>
+    <p class="stack">TypeScript &middot; Vue.js &middot; Node.js/Express &middot; AI agents</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">06/2023 &ndash; 11/2025<em>Medell&iacute;n, Colombia</em></div>
+  <div class="what">
+    <h3>Mid/Senior Software Developer, <span class="org">Gorilla Logic</span></h3>
+    <p>Two and a half years across outsourced client projects and internal initiatives, growing from frontend work to full-stack delivery and leadership contributions.</p>
+    <ul>
+      <li><b>Systech</b> (05/2025 &ndash; 09/2025). Custom solutions on the client's proprietary framework, plus automated test pipelines to keep the code reliable.</li>
+      <li><b>Leadership Program, internal</b> (11/2024 &ndash; 04/2025). Helped design and deliver leadership training for engineering teams, and facilitated workshops and mentoring sessions.</li>
+      <li><b>Trisept Solutions</b> (08/2023 &ndash; 11/2024). Angular and Tailwind components for a travel-plan purchase system, PowerReviews and TripAdvisor API integrations, .NET/VB backend modules, integration and unit tests, code reviews and sprint planning.</li>
+    </ul>
+    <p class="stack">Angular &middot; Tailwind CSS &middot; .NET/VB &middot; REST APIs &middot; Automated testing &middot; Mentoring</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">06/2023 &ndash; 02/2024<em>via UST Global</em></div>
+  <div class="what">
+    <h3>Senior Frontend Developer, <span class="org">CDW</span></h3>
+    <p>In parallel with other engagements: maintained legacy pages built on .NET and jQuery, built new reporting components on RESTful APIs, handled edge cases around data corruption and user sessions, and created React proof-of-concept modules for the system's modernization.</p>
+    <p class="stack">.NET &middot; jQuery &middot; React &middot; REST APIs</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">11/2021 &ndash; 11/2022<em>Remote</em></div>
+  <div class="what">
+    <h3>Full-Stack Developer, <span class="org">CIGO Tracker</span></h3>
+    <p>Built planning and tracking features for a global delivery-management platform in Angular with NgRx for centralized state, and designed a notifications module for real-time component interactions. Drew the workflow diagrams, developed database migrations, maintained the legacy backend and wrote proofs of concept and technical documentation.</p>
+    <p class="stack">Angular &middot; NgRx &middot; TypeScript &middot; Database migrations</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">01/2013 &ndash; present<em>Own studio</em></div>
+  <div class="what">
+    <h3>Founder and Full-Stack Developer, <span class="org">16 Ball Creations</span></h3>
+    <p>My personal brand for freelance development, started with the goal of growing it into a development company. Over thirteen years it has shipped web and mobile products for clients in Venezuela and Colombia, planned, designed and built end to end, together with the brand identities around them. Selected work is listed below.</p>
+    <p class="stack">Vue &middot; React &middot; Ionic/Angular &middot; WordPress &middot; Yii2 &middot; Graphic design</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">12/2018 &ndash; 01/2020<em>Medell&iacute;n, Colombia</em></div>
+  <div class="what">
+    <h3>Full-Stack Developer, <span class="org">Virtual Community Builders S.A.S.</span></h3>
+    <p>Built employment, entrepreneurship and training platforms for Medell&iacute;n's digital-government initiative, and custom WordPress and BI platforms for enterprise clients such as NewStetic and CED Antioquia. Integrated AI assistants (Watson and Dialogflow) into Moodle learning platforms, led database modelling, technical documentation and Git administration, and mentored junior developers.</p>
+    <p class="stack">WordPress &middot; Moodle &middot; Watson/Dialogflow &middot; BI &middot; Mentoring</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">07/2018 &ndash; 12/2018<em>Cali, Colombia</em></div>
+  <div class="what">
+    <h3>Freelance Software Developer, <span class="org">Vennex Group S.A.S.</span></h3>
+    <p>Optimized code and SQL scripts for the CUP CMS platform, ran data cleanup, migration and restructuring for the government client INCIVA, guided junior developers and helped plan the team's work.</p>
+    <p class="stack">SQL &middot; Data migration &middot; CMS</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">11/2015 &ndash; 03/2018<em>Caracas, Venezuela</em></div>
+  <div class="what">
+    <h3>Software Development Lead, <span class="org">OENS Ingenier&iacute;a</span></h3>
+    <p>Led a development team building web-based industrial control systems and ERP tools, integrated deep into production lines: requirement planning, UX, database design and team management.</p>
+    <ul>
+      <li><b>SCPC</b>, a concrete plant production control system, in two major versions (2015 and 2017).</li>
+      <li><b>SICAP</b> for LafargeHolcim.</li>
+      <li>The first <b>Modularity ERP</b>, the seed of the multi-company platform I still develop today.</li>
+      <li>Corporate sites for OENS and ZWCad Costa Rica, plus Microsoft Office 365 consulting.</li>
+    </ul>
+    <p class="stack">Team leadership &middot; Requirement planning &middot; UX &middot; Database design</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">01/2016 &ndash; 11/2016<em>Remote</em></div>
+  <div class="what">
+    <h3>Full-Stack Developer, <span class="org">Buenacausa.org</span></h3>
+    <p>Developed the platform on Yii Framework 1.1.</p>
+    <p class="stack">PHP &middot; Yii 1.1</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">06/2014 &ndash; 01/2016<em>Caracas, Venezuela</em></div>
+  <div class="what">
+    <h3>QA Automation Lead, <span class="org">M5 Team</span></h3>
+    <p>My first role in QA and test automation, for a year and a half. Automated tests with Selenium on top of the Acumatica ERP framework, led the QA team by managing its work and organizing deliveries, and tested and helped build Acumatica modules such as Service Management. Also consulted on the company's own website.</p>
+    <p class="stack">Selenium &middot; Acumatica ERP &middot; Team lead &middot; Functional and regression testing</p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="when">01/2012 &ndash; 09/2014<em>Caracas, Venezuela</em></div>
+  <div class="what">
+    <h3>Web Developer, <span class="org">G&uuml;ep Group, MirrorHouse Games and 4Geeks</span></h3>
+    <p>Where it started. At G&uuml;ep Group (05/2012 &ndash; 09/2014), websites for artists and professionals across industries: Cr&eacute;ditos Internacionales, Romina, Pavitas, Reinaldo D&iacute;az, Giovanni Bojanini and Domingo Mondongo. At 4Geeks (01/2012 &ndash; 05/2012), landing pages and corporate sites, among them Poligrass Venezuela and Connectly. A one-month stint at MirrorHouse Games (07/2014) on SummerFarm, a browser game that was never released.</p>
+    <p class="stack">PHP &middot; JavaScript &middot; MySQL &middot; WordPress</p>
+  </div>
+</section>
+
+<h2>Selected projects</h2>
+
+<section class="proj">
+  <div class="when">2015 &ndash; present</div>
+  <div><p><span class="name">Modularity ERP.</span> My own product: a multi-company ERP for small businesses that are not run by IT professionals. Born as an ERP for a concrete plant at OENS and grown version by version into a platform that adapts to caf&eacute;s, auto repair shops, salons and clinics by switching modules on and off. Angular 20 frontend, Django backend, PostgreSQL, Playwright suites, developed with Claude Code agents.</p></div>
+</section>
+<section class="proj">
+  <div class="when">2020 &ndash; present</div>
+  <div><p><span class="name">PsicoFormando.</span> A psychology outreach project I make with my family: I produce and edit the videos, design the graphics, built the website and run the content strategy. YouTube, Instagram and TikTok, plus psicoformando.com.</p></div>
+</section>
+<section class="proj">
+  <div class="when">2020 &ndash; 2021</div>
+  <div><p><span class="name">TradingCore S.A.S., Emprende F&aacute;cil Mujer and HorusInvestmenth.</span> An education platform for TradingCore, and two React web applications: one for a female-entrepreneurship initiative built during the pandemic, and an investment platform.</p></div>
+</section>
+<section class="proj">
+  <div class="when">2020</div>
+  <div><p><span class="name">Es De Todos, CED Antioquia and Puto King Tattoo Art.</span> A WordPress platform with an Ionic 5 application on a Yii2 backend; a custom backend and WordPress work for CED Antioquia; and the full package for a tattoo studio: logo, WordPress site and photography.</p></div>
+</section>
+<section class="proj">
+  <div class="when">2019</div>
+  <div><p><span class="name">Socialgrafo.</span> A business intelligence and data management platform in Vue.js for Corprefer S.A.S.</p></div>
+</section>
+<section class="proj">
+  <div class="when">2013 &ndash; 2015</div>
+  <div><p><span class="name">Venezuelan clients and brand work.</span> Custom development for Los Javelin, Agendas Empresariales E.S. de Venezuela and Promofactory de Venezuela. Logos for Puto King Tattoo Art, PsicoFormando and 16 Ball Creations, and book covers for LS Innovaciones, Transportes La Represa and AreCar Corporaci&oacute;n.</p></div>
+</section>
+
+<div class="cols">
+  <div>
+    <h2>Education</h2>
+    <h4>Licenciatura en Computaci&oacute;n (Computer Science), Computer Graphics</h4>
+    <p>Universidad Central de Venezuela, 2007 &ndash; 2013. 3D rendering, C++, OpenGL and OpenCL. Teaching assistant for five academic terms (2009 &ndash; 2011).</p>
+    <h2>Languages</h2>
+    <p>Spanish, native. English, full professional (C2, EFSET 73/100). German, Russian and Ukrainian, basic.</p>
+  </div>
+  <div>
+    <h2>Certifications</h2>
+    <ul>
+      <li>Advanced Automation Test in Cypress &mdash; Test Automation University, 2021</li>
+      <li>Introduction to Cypress &mdash; Test Automation University, 2021</li>
+      <li>Ionic/Angular Development &mdash; Udemy, 2020</li>
+      <li>EFSET 73/100, C2 Proficient &mdash; EF Standard English Test, 2019</li>
+    </ul>
+    <h2>Beyond the code</h2>
+    <p>Bass player and singer in Neural, a metal band. Audiovisual production and graphic design, the craft behind PsicoFormando. Reading, mostly on personal development.</p>
+  </div>
+</div>
+
+</body>
+</html>
